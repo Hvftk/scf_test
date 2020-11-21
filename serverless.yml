@@ -29,7 +29,6 @@ inputs:
           cronExpression: "0 */15 * * * *"
           enable: true
           argument: jd_dreamFactory		  
-		  
     - timer: # 点点券 
         parameters:
           name: jd_necklace
@@ -72,7 +71,6 @@ inputs:
           cronExpression: "0 3 0 * * * *"
           enable: true
           argument: jd_redPacket&jd_shop&jd_lotteryMachine
-
     - timer: # 取关京东店铺商品
         parameters:
           name: jd_unsubscribe
