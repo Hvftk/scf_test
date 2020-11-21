@@ -1,4 +1,5 @@
-# serverless.yml
+# serverless.yml 
+# 修改时间 2020-11-21 13:50
 
 #组件信息
 component: scf # (必选) 组件名称，在该实例中为scf
@@ -16,12 +17,31 @@ inputs:
   memorySize: 128 # 内存大小，单位MB
   timeout: 900 # 超时时间，单位秒
   events: # 触发器
-    - timer: # 签到 # 摇京豆
+    - timer: # 野比京东签到 
         parameters:
-          name: jd_bean_sign_jd_club_lottery
-          cronExpression: "0 0 0,12,18 * * * *"
+          name: jd_bean_sign
+          cronExpression: "0 6 0,16 * * * *"
           enable: true
-          argument: jd_bean_sign&jd_club_lottery
+          argument: jd_bean_sign		  
+    - timer: # 京喜工厂 
+        parameters:
+          name: jd_dreamFactory
+          cronExpression: "0 */15 * * * *"
+          enable: true
+          argument: jd_dreamFactory		  
+		  
+    - timer: # 点点券 
+        parameters:
+          name: jd_necklace
+          cronExpression: "0 10 0,20 * * *"
+          enable: true
+          argument: jd_necklace  		  		  		  
+    - timer: # 摇京豆
+        parameters:
+          name: jd_club_lottery
+          cronExpression: "0 0 0 * * * *"
+          enable: true
+          argument: jd_club_lottery		  	  		  
     - timer: # 京小超兑换奖品
         parameters:
           name: jd_blueCoin
@@ -48,10 +68,17 @@ inputs:
           argument: jd_joy_reward&jd_joy_steal
     - timer: # 京东全民开红包 # 进店领豆 # 取关京东店铺商品# 京东抽奖机
         parameters:
-          name: jd_redPacket_jd_shop_jd_unsubscribe_jd_lotteryMachine
+          name: jd_redPacket_jd_shop_jd_lotteryMachine
+          cronExpression: "0 3 0 * * * *"
+          enable: true
+          argument: jd_redPacket&jd_shop&jd_lotteryMachine
+
+    - timer: # 取关京东店铺商品
+        parameters:
+          name: jd_unsubscribe
           cronExpression: "0 10 0 * * * *"
           enable: true
-          argument: jd_redPacket&jd_shop&jd_unsubscribe&jd_lotteryMachine
+          argument: jd_unsubscribe		  
     - timer: # 京东天天加速
         parameters:
           name: jd_speed
@@ -67,7 +94,7 @@ inputs:
     - timer: # 京豆变动通知 # 京东排行榜
         parameters:
           name: jd_bean_change
-          cronExpression: "0 0 10 * * * *"
+          cronExpression: "0 0 6,15 * * * *"
           enable: true
           argument: jd_bean_change&jd_rankingList
     - timer: # 金融养猪# 天天提鹅
@@ -75,7 +102,7 @@ inputs:
           name: jd_pigPet_jd_daily_egg
           cronExpression: "0 12 * * * * *"
           enable: true
-          argument: jd_pigPet&jd_daily_egg
+          argument: jd_pigPet&jd_daily_egg	  
   environment: #  环境变量
     variables: #  环境变量对象
       AAA: BBB # 不要删除，用来格式化对齐追加的变量的
