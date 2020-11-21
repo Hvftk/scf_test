@@ -100,8 +100,8 @@ inputs:
           name: jd_redPacket
           cronExpression: "0 3 0 * * * *"
           enable: true
-          argument: jd_redPacket
-     - timer: # 进店领豆
+          argument: jd_redPacket  
+    - timer: # 进店领豆
         parameters:
           name: jd_shop
           cronExpression: "0 3 0 * * * *"
@@ -142,8 +142,8 @@ inputs:
           name: jd_rankingList
           cronExpression: "0 0 10 * * * *"
           enable: true
-          argument: jd_rankingList
-     - timer: # 金融养猪
+          argument: jd_rankingList        
+    - timer: # 金融养猪
         parameters:
           name: jd_pigPet
           cronExpression: "0 12 * * * * *"
