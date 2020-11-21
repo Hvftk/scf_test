@@ -26,13 +26,13 @@ inputs:
     - timer: # 京喜工厂 
         parameters:
           name: jd_dreamFactory
-          cronExpression: "0 */15 * * * *"
+          cronExpression: "0 */15 * * * * *"
           enable: true
           argument: jd_dreamFactory		  
     - timer: # 点点券 
         parameters:
           name: jd_necklace
-          cronExpression: "0 10 0,20 * * *"
+          cronExpression: "0 10 0,20 * * * *"
           enable: true
           argument: jd_necklace  		  		  		  
     - timer: # 摇京豆
