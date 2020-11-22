@@ -1,4 +1,4 @@
-//'use strict';严格模式会导致部分脚本不运行。
+//'use strict';严格模式会导致部分脚本不运行.
 exports.main_handler = async (event, context, callback) => {
   try {
       //如果想在一个定时触发器里面执行多个js文件需要在定时触发器的【附加信息】里面填写对应的名称，用 & 链接
