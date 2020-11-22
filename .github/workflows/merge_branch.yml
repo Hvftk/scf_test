@@ -1,4 +1,4 @@
-name: 从master合并到main分支
+name: 从master合并到main分支  //merge-from-master
 on:
   schedule:
     - cron: '1 0-15/3 * * *'
