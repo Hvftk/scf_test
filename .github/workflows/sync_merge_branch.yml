@@ -1,5 +1,5 @@
-# name: merge-from-master
-name: 从master合并到main分支
+# name: sync_merge_branch
+name: 同步合并分支
 on:
   schedule:
     - cron: '1 0-15/3 * * *'
@@ -14,6 +14,15 @@ jobs:
         with:
           persist-credentials: false
           
+      - name: sync lxk0301-scripts
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/lxk0301/jd_scripts.git"
+          source_branch: "master"
+          destination_branch: "jd_scripts"
+          github_token: ${{ secrets.PAT }}
+
       - name: sync lxk0301-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
