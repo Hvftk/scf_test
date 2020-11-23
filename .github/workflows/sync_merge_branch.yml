@@ -29,33 +29,15 @@ jobs:
         with:
           source_repo: "https://github.com/lxk0301/mySelf.git"
           source_branch: "main"
-          destination_branch: "master"
+          destination_branch: "mySelf"
           github_token: ${{ secrets.PAT }}
-                    
-      - name: sync lxk0301-scripts
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/lxk0301/mySelf.git"
-          source_branch: "main"
-          destination_branch: "all"
-          github_token: ${{ secrets.PAT }}          
+
 
       - name: Merge main from master	
         uses: devmasx/merge-branch@v1.3.1	
         if: env.PAT	
         with:	
           type: now	
-          from_branch: master	
+          from_branch: mySelf	
           target_branch: main	
-          github_token: ${{ secrets.PAT }}
-          
-          
-      - name: Merge main from master	
-        uses: devmasx/merge-branch@v1.3.1	
-        if: env.PAT	
-        with:	
-          type: now	
-          from_branch: jd_scripts	
-          target_branch: all	
           github_token: ${{ secrets.PAT }}
