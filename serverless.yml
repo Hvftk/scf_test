@@ -140,13 +140,13 @@ inputs:
     - timer: # 京豆变动通知
         parameters:
           name: jd_bean_change
-          cronExpression: "0 0 10 * * * *"
+          cronExpression: "0 0 7 * * * *"
           enable: true
           argument: jd_bean_change     
     - timer: # 京东排行榜
         parameters:
           name: jd_rankingList
-          cronExpression: "0 0 10 * * * *"
+          cronExpression: "0 10 * * * * *"
           enable: true
           argument: jd_rankingList        
     - timer: # 金融养猪
