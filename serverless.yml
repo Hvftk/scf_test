@@ -57,7 +57,7 @@ inputs:
         parameters:
           name: jd_pet
           cronExpression: "0 17 6-18/6 * * * *"
-          enable: true
+          enable: false
           argument: jd_pet
     - timer: # 宠汪汪喂食
         parameters:
@@ -75,7 +75,7 @@ inputs:
         parameters:
           name: jd_moneyTree
           cronExpression: "0 15 */1 * * * *"
-          enable: true
+          enable: false
           argument: jd_moneyTree
     - timer: # 京东种豆得豆
         parameters:
