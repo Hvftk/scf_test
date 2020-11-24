@@ -34,7 +34,13 @@ inputs:
           name: jd_necklace
           cronExpression: "0 10 0,20 * * * *"
           enable: true
-          argument: jd_necklace  		  		  		  
+          argument: jd_necklace
+    - timer: # 东东小窝 
+        parameters:
+          name: jd_small_home
+          cronExpression: "0 16,20 * * * * *"
+          enable: true
+          argument: jd_small_home
     - timer: # 摇京豆
         parameters:
           name: jd_club_lottery
