@@ -32,13 +32,13 @@ inputs:
     - timer: # 点点券 
         parameters:
           name: jd_necklace
-          cronExpression: "0 10 0,20 * * * *"
+          cronExpression: "0 10,16 0 * * * *"
           enable: true
           argument: jd_necklace
     - timer: # 东东小窝 
         parameters:
           name: jd_small_home
-          cronExpression: "0 16,20 * * * * *"
+          cronExpression: "0 16,20 8 * * * *"
           enable: true
           argument: jd_small_home
     - timer: # 摇京豆
