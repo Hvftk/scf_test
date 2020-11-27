@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b jd_scripts 
+          git clone -b jd_scripts http://admin@192.168.1.101:7070/r/virtualbox_all_versions.git
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -34,10 +34,10 @@ jobs:
       - name: npm install
         run: |
           cd ~/scf
-          git checkout jd_scripts
           npm install
       - name: '运行 【京豆签到脚本】'
         run: |
+          cd ~/jd_scripts
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
