@@ -38,7 +38,7 @@ jobs:
       
       - name: '运行 【京豆签到脚本】'
         run: |
-          cd ~/scf
+#          cd ~/scf
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
