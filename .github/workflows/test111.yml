@@ -37,7 +37,7 @@ jobs:
           npm install
       - name: '运行 【京豆签到脚本】'
         run: |
-          cd ~/jd_scripts
+          cd ~/scf/jd_scripts
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
