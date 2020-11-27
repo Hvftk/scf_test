@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b jd_scripts http://admin@192.168.1.101:7070/r/virtualbox_all_versions.git
+          git clone -b jd_scripts https://github.com/Hvftk/scf.git
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
