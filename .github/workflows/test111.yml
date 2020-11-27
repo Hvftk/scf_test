@@ -34,7 +34,7 @@ jobs:
       - name: npm install
         run: |
           git checkout main
-          cd ~/jd_scripts
+          cd ~/main
           npm install
       - name: '运行 【京豆签到脚本】'
         run: |
