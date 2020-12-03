@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone  jd_scripts https://github.com/Hvftk/scf.git ~/scf
+          git clone https://github.com/Hvftk/scf.git ~/scf
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
