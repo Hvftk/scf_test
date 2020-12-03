@@ -92,7 +92,7 @@ inputs:
     - timer: # 宠汪汪积分兑换奖品
         parameters:
           name: jd_joy_reward
-          cronExpression: "0 0 0-16/8 * * * *"
+          cronExpression: "1 0 0-16/8 * * * *"
           enable: true
           argument: jd_joy_reward
     - timer: # 宠汪汪偷好友积分与狗
