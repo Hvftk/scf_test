@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/Hvftk/scf.git ~/scf   # clone上游仓库
+          git clone https://github.com/Hvftk/scf.git ~/scf   # clone上游仓库格式
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -35,7 +35,7 @@ jobs:
         run: |
 
           cd ~/scf
-          git checkout jd_scripts # clone上游仓库 git checkout master,master指的是分支名称
+          git checkout jd_scripts              # clone上游仓库 git checkout master,master指的是分支名称
           npm install
       
       - name: '运行 【京豆签到脚本】'
