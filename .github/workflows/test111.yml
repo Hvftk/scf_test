@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b jd_scripts https://github.com/Hvftk/scf.git
+          git clone  jd_scripts https://github.com/Hvftk/scf.git ~/scf
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -40,7 +40,7 @@ jobs:
       
       - name: '运行 【京豆签到脚本】'
         run: |
-          cd ~/scf/jd_scripts
+          cd ~/scf
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
