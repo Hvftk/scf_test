@@ -35,7 +35,7 @@ jobs:
         run: |
 
           cd ~/scf
-          git checkout main
+          git checkout jd_scripts
           npm install
       
       - name: '运行 【京豆签到脚本】'
