@@ -31,7 +31,6 @@ jobs:
       - name: npm install
         run: |
 
-          cd ~/scf
           git checkout jd_scripts
           npm install
       
