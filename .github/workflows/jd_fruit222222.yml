@@ -27,9 +27,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}  
-      - name: npm install
-        run: |
-          npm install
+
       - name: '运行 【东东农场】'
         run: |
           node jd_bean_change.js
