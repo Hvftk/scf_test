@@ -33,6 +33,7 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
+          git checkout -b jd_scripts              # clone上游仓库 git checkout master,master指的是分支名称          
           npm install
 
       - name: '运行 【东东农场】'
