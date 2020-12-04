@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_fruit
+name: jd_fruit111111
 
 on:
   workflow_dispatch:
@@ -18,8 +18,9 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        run: |
-          git clone https://gitee.com/lxk0301/jd_scripts.git ~/jd_scripts
+        uses: actions/checkout@v2
+        with:
+          repository: Hvftk/scf_test
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -33,12 +34,13 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
-          cd ~/jd_scripts
+          cd ~/scf_test
+          git checkout jd_scripts              # clone上游仓库 git checkout master,master指的是分支名称
           npm install
       - name: '运行 【东东农场】'
         run: |
-          cd ~/jd_scripts
-          node jd_fruit.js
+          cd ~/scf_test
+          node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
