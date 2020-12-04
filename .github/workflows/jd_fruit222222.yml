@@ -20,7 +20,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: jd_scripts
-  
+      - name: Cache node_modules
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}  
       - name: npm install
         run: |
           npm install
