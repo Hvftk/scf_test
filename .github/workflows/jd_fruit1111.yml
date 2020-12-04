@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: Hvftk/scf_test ~/scf_test
+          repository: Hvftk/scf_test
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -40,7 +40,7 @@ jobs:
       - name: '运行 【东东农场】'
         run: |
 
-          cd ~/scf_test
+          cd ~/jd_scripts
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
