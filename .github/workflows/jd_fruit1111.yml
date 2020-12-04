@@ -39,6 +39,7 @@ jobs:
       - name: '运行 【东东农场】'
         run: |
 
+          cd ~/scf_test
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
