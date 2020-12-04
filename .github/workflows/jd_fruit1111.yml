@@ -34,13 +34,12 @@ jobs:
       - name: npm install
         run: |
 
-          git checkout -b jd_scripts              # clone上游仓库 git checkout master,master指的是分支名称          
+      
           npm install
 
       - name: '运行 【东东农场】'
         run: |
 
-          cd ~/jd_scripts
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
